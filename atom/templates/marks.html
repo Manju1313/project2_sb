@@ -1,0 +1,63 @@
+{% include "main.html" %}
+
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'super.css' %}" type="text/css"/>
+
+<head>
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: separate;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+    </head>
+
+<div class="container">
+
+    <h1>Marks</h1>
+    
+    <table >
+        <tr>
+        <th>ID</th>
+        <th>FIRSTNAME</th>
+        <th>TELUGU</th>
+        <th>ENGLISH</th>
+        <th>MATHEMATICS</th>
+        <th>PHYSICS</th>
+        <th>BIOLOGY</th>
+        <th>CHEMISTRY</th>
+        <th>SOCIAL</th>
+    
+    </tr>
+    
+    {% for x in mymarks %}
+    <tr>
+        <td>{{ x.id }}</td> 
+        <td>{{ x.first_name }}</td>
+        <th>{{ x.Telugu }}</th>
+        <td>{{ x.English }}</td>
+        <td>{{ x.Mathematics }}</td>
+        <td>{{ x.Physics}}</td>
+        <td>{{ x.Biology}}</td>
+        <td>{{ x.Chemistry}}</td>
+        <td>{{ x.Social}}</td>
+        
+        
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
